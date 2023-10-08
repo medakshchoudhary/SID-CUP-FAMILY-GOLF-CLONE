@@ -1,0 +1,85 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;/*  */
+    font-family: "Montserrat", sans-serif; /* used to give font style */
+    color: white;
+}
+
+html,body{
+    width : 100%;
+    height : 100%;
+}
+#nav{
+    width: 100%;
+    height: 135px;
+    align-items: center; /* {align items} height wise - top to bottom (movement in y axis) - alignment */
+
+    /* flex start makes the contents go to the start of flex in this case they align along the left side of navbar because justify content keeps the content from left to right */
+    justify-content: flex-start; /* { justify content } width wise - left to right (movement in x axis) - alignment*/
+    gap: 60px; /* used to give gap between different elemnets */ 
+    position: fixed; /* this will keep the nav bar fixed with us while we scroll the whole website */ 
+    padding: 0 120px; /* padding hoti hai andar space dena element ke (layman language mai) */ 
+    display: flex; /* it helps to make the desired thing flexible in nature - by default it arranges from columns (default) to rows - it is used to divide and control the elements in rows and columns  */ 
+    z-index: 99; /* brings things forward or backward */ 
+}
+#nav img{
+    height: 75px;
+}
+#nav h4{
+    text-transform: uppercase; /* text tranform helps us to change the text how ever we want */
+    font-weight: 500; /* it can be used to bring weight in characters like we can say make it bold or slim */
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* it helps us to make the object cover the whole page(dimension)  */
+    position: fixed; /* keepps the video fixed while the user is scrolling */
+    z-index: -2; /* helps to keep the video in the utmost back */
+}
+#main{
+    position: relative; /* it makes main relative so its child stays inside of it and we can give child the characterstics w.r.t the parent that is the main */
+    background-color: rgba(0, 0, 0, 0.329); /* helps to give the bakcground color in this case it is applied in the whole page front and last value in the brackets is for opacity which will help to keep the video less bright - faded - so that user can focus more on the websites content */
+}
+#page1{
+    height: 100vh; /* gave vh here because main ki height defined nhi hai toh " % " laga kar ghanta kuch nhi dikheyga aur vh matlab viewportheight*/
+    width: 100%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;/* it helps to bring the column default back to the normal felx useddisplay above */
+    text-align: center; /* aligns the texts to the center */
+}
+#page1 h1{
+    font-size: 120px;
+    font-weight: 900;
+    position: relative;
+}
+
+/* before and after are sudo elements which add text before and after the main content in the xyz::before/after element here it is used to add the 3d effect to the big words in h1*/
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute; /* absolute position mai element uth jata hai kaha uth jata hai nhi pata toh colour laag ke pata karna chaiye (lol actually mai it is used to elevate in a layer which we can say is about it like a 3d layer or another dimension above it LAYMAN LANGAUGE)*/
+    color: black;
+    top: -5px; /* defines where the element should be - here we have given h1 relative so it will work/adjust accoridng to it */
+    left: -5px ; /* defines where the element should be - here we have given h1 relative so it will work/adjust accoridng to it */
+    -webkit-text-stroke: 2px #95C11E; /* adds that border effect around the newelt added using sudo elments(before/after) */
+    z-index: -1;
+}
+#page1 h2{
+    font-size: 30px;
+    font-weight: 800;
+    /* Gives margin to the elements from top right bottom left if used in single line (clockwise) better for beginers is to define where they want what */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#page1 p{
+    font-size: 20px;
+    font-weight: 500;
+    width: 40%;   
+}
+#page2{
+    width: 100%;
+    height: 100vh;
+}
