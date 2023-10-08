@@ -62,8 +62,8 @@ video{
     content: "EAT. DRINK. PLAY.";
     position: absolute; /* absolute position mai element uth jata hai kaha uth jata hai nhi pata toh colour laag ke pata karna chaiye (lol actually mai it is used to elevate in a layer which we can say is about it like a 3d layer or another dimension above it LAYMAN LANGAUGE)*/
     color: black;
-    top: -5px; /* defines where the element should be - here we have given h1 relative so it will work/adjust accoridng to it */
-    left: -5px ; /* defines where the element should be - here we have given h1 relative so it will work/adjust accoridng to it */
+    top: -6px; /* defines where the element should be - here we have given h1 relative so it will work/adjust accoridng to it */
+    left: -6px ; /* defines where the element should be - here we have given h1 relative so it will work/adjust accoridng to it */
     -webkit-text-stroke: 2px #95C11E; /* adds that border effect around the newelt added using sudo elments(before/after) */
     z-index: -1;
 }
