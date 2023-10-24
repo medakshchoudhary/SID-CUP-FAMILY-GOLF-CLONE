@@ -1,9 +1,12 @@
 var crsr = document.querySelector("#cursor") // dom mai pard lena agey 
+var crsrBlur = document.querySelector("#cursor-blur") // dom mai pard lena agey 
 
 // document sai pura html select hoh jaeyga ,, ad event listener sai joh joh kuch hoga record hoga kon? ==> mouse ki movements in this case kidr? ==> function (xyz) ke andar 
 document.addEventListener("mousemove", function(dets){
     crsr.style.left = dets.x + "px"; // px isliye likha kyunki wrt to what move hoga uske liye samjh nhi aya toh bad mai dom pardna hai tab ajeyga samj 
     crsr.style.top = dets.y + "px";
+    crsrBlur.style.left = dets.x - 200 + "px"; // - 200 WAGERA POSITION KAHA HOGI WOH SET KARNE KE LIYE HAI
+    crsrBlur.style.top = dets.y - 200 + "px";
 })
 
 

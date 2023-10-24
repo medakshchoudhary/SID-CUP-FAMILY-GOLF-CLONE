@@ -11,18 +11,27 @@ html,body{
     height : 100%;
 }
 #cursor{
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
-    background-color: #95C11E;
+    background-color: #96c11e;
     position: fixed; /* yeh samj nhi aya */
     z-index: 100;
+}
+#cursor-blur{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%; /* gives edges to the div selected used for making a circular shape */
+    background-color: #96c11e39;
+    position: fixed; /* yeh samj nhi aya */
+    filter: blur(50px); /* adds blur to the desired shape made / div */
+    z-index: 9;
 }
 #nav{
     width: 100%;
     height: 135px;
     align-items: center; /* {align items} height wise - top to bottom (movement in y axis) - alignment */
-
+    
     /* flex start makes the contents go to the start of flex in this case they align along the left side of navbar because justify content keeps the content from left to right */
     justify-content: flex-start; /* { justify content } width wise - left to right (movement in x axis) - alignment*/
     gap: 60px; /* used to give gap between different elemnets */ 
@@ -47,7 +56,7 @@ video{
 }
 #main{
     position: relative; /* it makes main relative so its child stays inside of it and we can give child the characterstics w.r.t the parent that is the main */
-    background-color: rgba(0, 0, 0, 0.329); /* helps to give the bakcground color in this case it is applied in the whole page front and last value in the brackets is for opacity which will help to keep the video less bright - faded - so that user can focus more on the websites content */
+    background-color: rgba(0, 0, 0, 0.37); /* helps to give the bakcground color in this case it is applied in the whole page front and last value in the brackets is for opacity which will help to keep the video less bright - faded - so that user can focus more on the websites content */
 }
 #page1{
     height: 100vh; /* gave vh here because main ki height defined nhi hai toh " % " laga kar ghanta kuch nhi dikheyga aur vh matlab viewportheight*/
@@ -58,6 +67,7 @@ video{
     display: flex;
     flex-direction: column;/* it helps to bring the column default back to the normal flex used display above */
     text-align: center; /* aligns the texts to the center */
+    z-index: 10;
 }
 #page1 h1{
     font-size: 120px;
@@ -80,14 +90,62 @@ video{
     font-weight: 800;
     /* Gives margin to the elements from top right bottom left if used in single line (clockwise) better for beginers is to define where they want what */
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 #page1 p{
     font-size: 20px;
     font-weight: 500;
-    width: 40%;   
+    width: 50%;   
 }
 #page2{
     width: 100%;
     height: 100vh;
+    z-index: 10;
+}
+
+#scroller{
+    white-space: nowrap;
+    overflow-x : auto; 
+    overflow-y : hidden;
+    position: relative;
+    z-index: 10;
+    scrollbar-width: none; /* for firefox this is necessary to add */
+    -ms-overflow-style: none; /* for Internet Explorer/Edge */
+}
+
+/* removes the scroller bar */
+#scroller::-webkit-scrollbar{
+    display: none; /* for chrome x bar is still coming */
+}
+#scroller-in{
+    display: inline-block;/* makes the elements inline block ==> matlab usko ek dusrey ke agey ane ko allow kardeta hai */
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 140px;
+    font-weight: 900;
+    color: transparent;
+    font-family: gilroy;
+    margin-right: 20px;
+    -webkit-text-stroke: 2px #95C11E;
+    transition: all linear 0.5s; /* adds transition to the text for smooth look */
+
+} 
+#scroller h4:hover{ /* when hovered does the following */
+    color: #95C11E;
+}
+
+/* used to make animations samj nhi aya bad mai samj lunga */
+@keyframes scroll {
+    from{
+        transform : translateX(0);
+    }
+    to{
+        transform : translateX(-100%);
+    }
 }
