@@ -235,6 +235,37 @@ video{
     transform: rotate3d(-1,1,0,20deg);
 }
 
+#green-div{
+    height: 45vh;
+    background: linear-gradient(to left bottom,#089D3C,#9AC81F,#B2E724);/* line gradient wahi ek line mai uski properties hai agey jaisey to left matlab ==> 1st colour sai second colour mai lageyga  */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+#green-div h4{
+    text-transform: uppercase;
+    text-align: center;
+    padding: 50px;
+    width: 60%;
+    font-size: 40px;
+    color: black;
+    line-height: 50px;
+    font-weight: 800;
+}
+
+#green-div #img1{
+    height: 100%;
+    width: 10%;
+    object-fit: cover;
+    transform: rotate(180deg); /* rotates the image by described degree */
+}
+#green-div #img2{
+    height: 100%;
+    width: 10%;
+    object-fit: cover;
+}
 
 
 /* used to make animations samj nhi aya bad mai samj lunga */
