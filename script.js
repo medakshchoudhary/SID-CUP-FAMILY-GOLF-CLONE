@@ -1,30 +1,37 @@
-var crsr = document.querySelector("#cursor") // dom mai pard lena agey 
-var crsrBlur = document.querySelector("#cursor-blur") // dom mai pard lena agey 
+var crsr = document.querySelector("#cursor"); // dom mai pard lena agey 
+var crsrBlur = document.querySelector("#cursor-blur"); // dom mai pard lena agey 
+
+// the crusor hover is not working for the navbar
 
 // document sai pura html select hoh jaeyga ,, ad event listener sai joh joh kuch hoga record hoga kon? ==> mouse ki movements in this case kidr? ==> function (xyz) ke andar 
 document.addEventListener("mousemove", function(dets){
-    crsr.style.left = dets.x + 30 + "px"; // px isliye likha kyunki wrt to what move hoga uske liye samjh nhi aya toh bad mai dom pardna hai tab ajeyga samj 
+    crsr.style.left = dets.x + "px"; // px isliye likha kyunki wrt to what move hoga uske liye samjh nhi aya toh bad mai dom pardna hai tab ajeyga samj 
     crsr.style.top = dets.y + "px";
     crsrBlur.style.left = dets.x - 200 + "px"; // - 200 WAGERA POSITION KAHA HOGI WOH SET KARNE KE LIYE HAI
     crsrBlur.style.top = dets.y - 200 + "px";
-})
+});
 
-var h4all = document.querySelectorAll("#nav h4") // we selected querySelectorAll because we ddint write all in query selector then only one h4 that is the first one would be picked
+var h4all = document.querySelectorAll("#nav h4"); // we selected querySelectorAll because we ddint write all in query selector then only one h4 that is the first one would be picked
+
+
+// + 30 pai the cursor effect is working 
+// asey bhi its working maybe h4 center mai jakr activate hoh raha hai kuch samj nhi araha hai check again 
 
 h4all.forEach(function(elem){
     elem.addEventListener("mouseenter",function(){
-        crsr.style.scale = 3
-        crsr.style.border = "1px solid white"
-        crsr.style.backgroundColor = "transparent"
+        crsr.style.scale = 3;
+        crsr.style.border = "1px solid white";
+        crsr.style.backgroundColor = "transparent";
 
-    })
+    });
     elem.addEventListener("mouseleave",function(){
-        crsr.style.scale = 1
-        crsr.style.border = "0px solid #96c11e"
-        crsr.style.backgroundColor = "#96c11e"
+        crsr.style.scale = 1;
+        // after removing +30 the cursro effect scaling stops working but if i remove below two also then it works perfectly whats the issue check !!
+        crsr.style.border = "0px solid #96c11e";
+        crsr.style.backgroundColor = "#96c11e";
 
-    })
-})
+    });
+});
 
 
 
@@ -45,13 +52,14 @@ gsap.to("#nav",{
         // markers:true, // is sai pata chaleyga ki chl raha hai ya nhi jab tak maine iske neeche wala yani ki START nhi diya tha tab tak it was starting from zero ..... to be continued
 
         start:"top -10%", // lekin jab maine yeh dala toh woh animation tabi trigger hui jab maine thorda sa scroll kiya >>>>> aur start matlab upar sai neeche atey time 4 percent pai activate 
+        //  minus samj nhi aya muje check again 
 
         end:"top -11%", // aur end sai 5 percent matlab upar jatey time jaisey hi 5 percent bacha hoga animation khatam
 
         scrub:1, // yeh repeat mai help karta hai like == > jab mai neeche jaunga iske bina aur wapis aunga upar toh yeh wahi raheyga,,,, Par iske hone pai upar jane pai start mai waisey hi raheyga >>>>>>>>> and ham scrub ki value - sai 5 tak bhi de saktey hai 
-    }
+    },
 
-})
+});
 
 gsap.to("#main",{
     backgroundColor: "black",
@@ -61,5 +69,56 @@ gsap.to("#main",{
         start : "top -25%",
         end: "top -70%",
         scrub:1,
+    },
+});
+
+gsap.from("#about-us img,#about-us-in",{
+    y:90, // for movement in y axis (animation)
+    opacity:0,
+    duration:1,
+    scrollTrigger:{
+        trigger:"#about-us",
+        scroller:"body",
+        start:"top 70%",
+        end:"top 65%",  
+        scrub:2,
+    },
+});
+
+gsap.from(".cards",{
+    scale:0.8,
+    opacity:0,
+    duration:1,
+    stagger:0.1,
+    scrollTrigger:{
+        trigger:".cards",
+        scroller:"body",
+        start:"top 70%",
+        end:"top 65%",  
+        scrub:1,
+    },
+});
+
+gsap.from("#colon1",{
+    y:-70,
+    x:-70,
+    scrollTrigger:{
+        trigger:"#colon1",
+        scroller:"body",
+        start:"top 55%",
+        end:"top 45%",
+        scrub:4,
+    }
+})
+
+gsap.from("#colon2",{
+    y:70,
+    x:70,
+    scrollTrigger:{
+        trigger:"#colon1",
+        scroller:"body",
+        start:"top 55%",
+        end:"top 45%",
+        scrub:4,
     }
 })
