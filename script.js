@@ -85,6 +85,7 @@ gsap.from("#about-us img,#about-us-in",{
     },
 });
 
+// after adding this into js the transform rotate3d is not working
 gsap.from(".cards",{
     scale:0.8,
     opacity:0,

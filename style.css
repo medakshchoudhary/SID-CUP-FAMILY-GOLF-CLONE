@@ -306,6 +306,55 @@ video{
     right: 10%;
 }
 
+#page4{
+    height: 30vh; /* min height nhi use kar skatey idr kyu? */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 70px;
+}
+#page4 .elem{
+    overflow: hidden; /* why did we gave it here? */
+    height: 70%;
+    width: 27%;
+    position: relative;
+    border-radius: 15px;
+}
+
+.elem h2{
+    height: 100%;
+    width: 100%;
+    /* because we have given h2 as 100by 100 percent therefore no need of overlay here direct add the color needed for hovering animation */
+    background-color: #95C11E;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: 800;
+    font-size: 35px;
+    z-index: 10;
+    transition: all ease 0.6s;
+}
+
+.elem:hover h2{
+    background-color: transparent;
+    color: white;
+}
+.elem img{
+    height: 100%;
+    width: 100%;
+    scale: 1.1;
+    object-fit: cover;
+    transform: all ease 0.6s;
+}
+.elem:hover img{
+    scale: 1;
+}
+
+
 /* used to make animations samj nhi aya bad mai samj lunga */
 @keyframes scroll {
     from{
