@@ -3,11 +3,29 @@ var crsrBlur = document.querySelector("#cursor-blur") // dom mai pard lena agey
 
 // document sai pura html select hoh jaeyga ,, ad event listener sai joh joh kuch hoga record hoga kon? ==> mouse ki movements in this case kidr? ==> function (xyz) ke andar 
 document.addEventListener("mousemove", function(dets){
-    crsr.style.left = dets.x + "px"; // px isliye likha kyunki wrt to what move hoga uske liye samjh nhi aya toh bad mai dom pardna hai tab ajeyga samj 
+    crsr.style.left = dets.x + 30 + "px"; // px isliye likha kyunki wrt to what move hoga uske liye samjh nhi aya toh bad mai dom pardna hai tab ajeyga samj 
     crsr.style.top = dets.y + "px";
     crsrBlur.style.left = dets.x - 200 + "px"; // - 200 WAGERA POSITION KAHA HOGI WOH SET KARNE KE LIYE HAI
     crsrBlur.style.top = dets.y - 200 + "px";
 })
+
+var h4all = document.querySelectorAll("#nav h4") // we selected querySelectorAll because we ddint write all in query selector then only one h4 that is the first one would be picked
+
+h4all.forEach(function(elem){
+    elem.addEventListener("mouseenter",function(){
+        crsr.style.scale = 3
+        crsr.style.border = "1px solid white"
+        crsr.style.backgroundColor = "transparent"
+
+    })
+    elem.addEventListener("mouseleave",function(){
+        crsr.style.scale = 1
+        crsr.style.border = "0px solid #96c11e"
+        crsr.style.backgroundColor = "#96c11e"
+
+    })
+})
+
 
 
 

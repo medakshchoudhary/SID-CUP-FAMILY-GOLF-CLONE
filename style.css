@@ -1,3 +1,5 @@
+/* when you add or give absolute to any div/element give relative to its parent */
+
 *{
     margin : 0;
     padding : 0;
@@ -9,6 +11,7 @@
 html,body{
     width : 100%;
     height : 100%;
+    cursor: none; /* it removes the default cursor from the website when using it */
     /* perspective: 800px; */ /* by applying this the cursors effect is not shwoing up check the issue  */
 }
 #cursor{
@@ -100,14 +103,14 @@ video{
 }
 #page2{
     width: 100%;
-    min-height: 100vh;
+    min-height: 100vh; /* min is used for adding responsiveness will learn tht in reponsive web */
     z-index: 10;
 }
 
 #scroller{
     white-space: nowrap;/* koi bhi element agli line mai araha hoh toh usko theek karne mai help karta hai */
-    overflow-x : auto; 
-    overflow-y : hidden;
+    overflow-x : auto; /* still need to check what this does*/
+    overflow-y : hidden; /* hides the scroller */
     position: relative;
     z-index: 10;
     scrollbar-width: none; /* for firefox this is necessary to add */
@@ -122,9 +125,9 @@ video{
     display: inline-block;/* makes the elements inline block ==> matlab usko ek dusrey ke agey ane ko allow kardeta hai */
     white-space: nowrap;
     animation-name: scroll;
-    animation-duration: 30s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation-duration: 30s; /* ggive duration to the linear animation of the banner line */
+    animation-timing-function: linear; 
+    animation-iteration-count: infinite;/* gives scrolling of scroller element in infinite position */
 }
 #scroller h4{
     display: inline-block;
@@ -193,12 +196,12 @@ video{
     border-radius: 5%;
     background-position: center;
     background-size: cover;
-    overflow: hidden;
-    transition: all ease 0.6s;
+    overflow: hidden; /* it makes the above div fit into its parents size if we remove it you will understand what i am talking about => basically anthing that overflows from th parent divs properties it gets hidden  */
+    transition: all ease 0.6s; /* it will give transition to the hovering effect on the cards */
 }
 
 #card1{
-    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C682&ssl=1);
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C682&ssl=1); /* giving div a background using an image */
 }
 #card2{
     background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C1024&ssl=1);
@@ -213,8 +216,8 @@ video{
     background-color: #ADDC2C;
     padding: 30px;
     padding-top: 100px; /* top ko neeche rakhna tha kyunki usko phir priority mileygi */
-    opacity: 0;
-    transition: all ease 0.6s;
+    opacity: 0; /* gives zero opacity to the overlay divs above the all the card divs untill unless hovered */
+    transition: all ease 0.6s; /* gives transition to the hovering and tilting effect */
 }
 .overlay h4{
     color: black;
@@ -233,6 +236,7 @@ video{
 
 .cards:hover{ /* make it tilt according to the cursor this is not good */
     transform: rotate3d(-1,1,0,20deg);
+    /* used to tilt the cards when hovered into x and y dimension using tranform => rotate3d */
 }
 
 #green-div{
@@ -251,14 +255,14 @@ video{
     width: 60%;
     font-size: 40px;
     color: black;
-    line-height: 50px;
+    line-height: 50px; /* gives spaces in between two lines */
     font-weight: 800;
 }
 
 #green-div #img1{
     height: 100%;
     width: 10%;
-    object-fit: cover;
+    object-fit: cover; /* applys the cover property on the image to fit properly // recheck this in mdn refrence */
     transform: rotate(180deg); /* rotates the image by described degree */
 }
 #green-div #img2{
@@ -267,6 +271,40 @@ video{
     object-fit: cover;
 }
 
+#page3{
+    width: 100%;
+    min-height: 100vh;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+
+/* ">" this is direct sign if you want to trigger en element directly which is in a subsectin of an element */
+#page3>p{ 
+    width: 60%;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 50px;
+}
+
+#page3 img{
+    position: absolute; 
+    /* why we did this ? => maybe to move it where evr you want cause its parent is relative so boundary is fixed still recheck!!!!! */
+    height: 60px;
+}
+
+#page3 #colon1{
+    top: 20%; /* moves the described element where ever you want */
+    left: 10%;
+}
+
+#page3 #colon2{
+    bottom: 20%;
+    right: 10%;
+}
 
 /* used to make animations samj nhi aya bad mai samj lunga */
 @keyframes scroll {
