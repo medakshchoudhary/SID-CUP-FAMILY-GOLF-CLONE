@@ -44,7 +44,7 @@ gsap.to("#nav",{
 
     duration:0.5, // itne time bad load hogi ~ Plus seconds likhne ki zarurat nhi hai 
     height: "110px", // load hone ke bad jitni bhi nav ki css mai height hai change hokr js jitni hoh jaeygi 
-
+    
     scrollTrigger:{
         trigger:"#nav", // triggers the mentioned element 
         scroller:"body", // mentioned element will be triggered jab mai yaha pai mentioned element ko scroll karunga  
